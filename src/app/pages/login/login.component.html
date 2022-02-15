@@ -1,0 +1,74 @@
+<br>
+    <br>
+        <br>
+  <!-- ======= Contact Us Section ======= -->
+  <section id="contact" class="contact">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <!-- <h2>Contact Us</h2> -->
+        <p>Login Here</p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+          <div class="info">
+       
+            <img src="/assets/img/clients/login.jpg" width="450px" height="450px">
+      
+          </div>
+
+        </div>
+      
+
+        <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+          <div *ngif="status=='success'; else errorStatus">
+            <div class="alert alert-success" *ngif="datasaved">
+               {{message}}
+            </div>
+          </div>
+            <ng-template #errorstatus="">
+              <div class="alert alert-danger" *ngif="datasaved">
+                  {{message}}
+               </div>
+          </ng-template>
+          
+          <form (ngSubmit)="onSubmit()" [formGroup]="loginForm" class="text-center border border-light p-5">
+            <p class="h4 mb-4">Log In</p>
+            <!-- E-mail -->
+            <input type="text" name="email" class="form-control" id="email" 
+            formControlName="email" placeholder="Your Name" required>
+            <span *ngif="!loginForm.get('email').valid &amp;&amp; loginForm.get('email').touched">Please enter Email !!!</span>
+<br>
+            <!-- Password -->
+            <input type="password" name="password" class="form-control" name="password" id="password"
+            formControlName="password" placeholder="Create a password for your account" required>
+            <span *ngif="!loginForm.get('password').valid &amp;&amp; loginForm.get('password').touched">Please enter Email !!!</span>
+            <!-- Newsletter -->
+  
+            <!-- Sign up button -->
+            <button class="btn btn-info my-4 btn-block" type="submit">Log in</button>
+  
+            <!-- Social register -->
+            <p>or Log In with:</p>
+  
+            <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+            <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+            <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+            <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+  
+            <hr>
+  
+            <!-- Terms of service -->
+            <p>By clicking
+              <em>Sign up</em> you agree to our
+              <a href="" target="_blank">terms of service</a>
+  
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Contact Us Section -->

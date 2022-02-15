@@ -1,0 +1,87 @@
+<br>
+<br>
+<br>
+<!-- ======= Contact Us Section ======= -->
+<section id="contact" class="contact">
+  <div class="container" data-aos="fade-up">
+
+    <div class="section-title">
+      <h2>Register Here</h2>
+      <p>Find a job & grow your career</p>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+        <div class="info">
+          <img src="/assets/img/clients/registration.jpg" width="450px" height="450px">
+        
+        </div>
+
+      </div>
+      
+      <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+        
+        <!-- Default form register -->
+        <form (ngSubmit)="onSubmit()" [formGroup]="regForm" class="text-center border border-light p-5">
+          <p class="h4 mb-4">Sign up</p>
+          <div class="alert alert-danger" *ngIf="datasaved">
+            {{message}}
+         </div>
+            <span></span>
+        
+          <div class="form-row mb-4">
+            <div class="col">
+              <!-- First name -->
+              <input type="text" name="username" class="form-control" id="username" 
+              formControlName="username" placeholder="Your Name" required>
+              <span *ngif="!regForm.get('username').valid &amp;&amp; regForm.get('username').touched">Please enter Your Name !!!</span>
+            </div>
+
+          </div>
+
+          <!-- E-mail -->
+          <input type="email" class="form-control" name="email" id="email" 
+          formControlName="email" placeholder="Your Email" required>
+          <span *ngif="!regForm.get('email').valid &amp;&amp; regForm.get('email').touched">Please enter Email !!!</span>
+
+          <!-- Password -->
+          <input type="password" class="form-control" name="password" id="password"
+          formControlName="password" placeholder="Create a password for your account" required>
+          <small id="defaultRegisterFormPasswordHelpBlock" class="form-text text-muted mb-4">
+            At least 8 characters and 1 digit
+          </small>
+          <span *ngif="!regForm.get('password').valid &amp;&amp; regForm.get('password').touched">Please enter Email !!!</span>
+
+
+          <!-- Phone number -->
+          <input type="phone"  class="form-control" name="phone" id="phone" 
+          formControlName="phone" placeholder="Mobile Number" required>
+          <span *ngif="!regForm.get('phone').valid &amp;&amp; regForm.get('phone').touched">Please enter Email !!!</span>
+
+          <!-- Newsletter -->
+
+          <!-- Sign up button -->
+          <button class="btn btn-info my-4 btn-block" type="submit">Sign in</button>
+
+          <!-- Social register -->
+          <p>or sign up with:</p>
+
+          <a href="#" class="mx-2" role="button"><i class="fab fa-facebook-f light-blue-text"></i></a>
+          <a href="#" class="mx-2" role="button"><i class="fab fa-twitter light-blue-text"></i></a>
+          <a href="#" class="mx-2" role="button"><i class="fab fa-linkedin-in light-blue-text"></i></a>
+          <a href="#" class="mx-2" role="button"><i class="fab fa-github light-blue-text"></i></a>
+
+          <hr>
+
+          <!-- Terms of service -->
+          <p>By clicking
+            <em>Sign up</em> you agree to our
+            <a href="" target="_blank">terms of service</a>
+
+        </form>
+      </div>
+
+    </div>
+
+  </div>
+</section><!-- End Contact Us Section -->
